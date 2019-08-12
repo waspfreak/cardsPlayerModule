@@ -1,0 +1,131 @@
+$grey: #eaeaea;
+$pink-background: #e90052;
+$title-color: #fff;
+
+//Font Family
+$title-font: Arial;
+
+//Font Sizes
+$large: 22px;
+$medium: 16px;
+$small: 12px;
+
+//extras
+$border-radius: 0;
+
+@mixin box-shadow($params) {
+  -webkit-box-shadow: $params;
+  -moz-box-shadow: $params;
+  box-shadow: $params;
+}
+$shadows: 0px 2px 10px 2px #464444;
+
+
+
+
+//Card
+.card{
+  .card_dropdown{
+    margin: 1.2em 0;
+    .dropdown{
+      width:100%;
+      background-color: $grey;
+      .dropdown-toggle{
+        font-family: $title-font;
+        font-size: $medium;
+        width:100%;
+        text-align: left;
+        ::after{
+          float: right;
+          margin-top: 0.5em;
+        }
+      }
+     .dropdown-menu{
+        border-radius: $border-radius;
+       .dropdown-item{
+         padding: .25rem .8rem;
+       }
+      }
+    }
+  }
+  .card_img{
+    background-color: #fff;
+    background: url("./../public/image/background-player.png") no-repeat right 0;
+    img{
+      max-width: 150px;
+    }
+  }
+  .card_items{
+    background-color:$pink-background;
+    padding: 1em;
+    .logo {
+      position: relative;
+      float: right;
+      width: 70px;
+      height: 70px;
+      top: -50px;
+      border-radius: 50%;
+      //Logo per player
+      &.logo-p2064{
+        background: url("./../public/image/badges_sprite.png") 10256px 221px;
+        background-size: 892px;
+      }
+      &.logo-p4148{
+        background: url("./../public/image/badges_sprite.png") 10182px 221px;
+        background-size: 892px;
+      }
+      &.logo-p4246{
+        background: url("./../public/image/badges_sprite.png") -2px 217px;
+        background-size: 885px;
+      }
+      &.logo-p4916{
+        background: url("./../public/image/badges_sprite.png") 493px -2254px;
+        background-size: 845px;
+      }
+      &.logo-p8983{
+        background: url("./../public/image/badges_sprite.png") 0 0;
+        background-size: 845px;
+      }
+    }
+
+    .list-group{
+      &.card-list-attributes {
+        width: 100%;
+        font-size: $medium;
+        color: #38003c;
+        .list-group-item{
+          border: 0;
+          margin-bottom: 4px;
+          border-radius: 0;
+          border-radius: 0;
+          @include box-shadow($shadows);
+          //-moz-box-shadow:    0px 1px 8px 2px #464444;
+          //-webkit-box-shadow: 0px 1px 8px 2px #464444;
+          //box-shadow: 0px 1px 8px 2px #464444;
+          .list-value {
+            float: right;
+            font-weight: bold;
+          }
+        }
+      }
+    }
+
+    .player{
+      font-size: $large;
+      font-family: $title-font;
+      color: $title-color;
+    }
+    .position{
+      color: $title-color;
+      font-family: $title-font;
+      font-size: $medium;
+    }
+  }
+}
+
+//extras
+
+.btn.focus, .btn:focus {
+  outline: 0;
+  box-shadow: 0 0 0 0rem;
+}
